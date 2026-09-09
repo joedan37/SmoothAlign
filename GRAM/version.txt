@@ -1,0 +1,7 @@
+SmoothAlign release
+
+This directory contains the GRAM volume-alignment implementation and the
+SmoothAlign modifications used in the accompanying experiments. Historical
+experiment snapshots, datasets, checkpoints, logs, and scheduler scripts are
+excluded from this archive. See the repository README for setup and
+attribution.

@@ -1,0 +1,58 @@
+{
+  "experiment_name": "msrvtt_multimodal_prior_1ka",
+  "seed": 20260730,
+  "ret_annotation": "./datasets/annotations/msrvtt/descs_ret_test.json",
+  "caption_annotation": "./datasets/annotations/msrvtt/descs_cap_test.json",
+  "video_dir": "./datasets/rawdata/msrvtt/TestVideo",
+  "audio_dir": "./datasets/rawdata/msrvtt/TestAudio",
+  "split_size": 1000,
+  "captions_per_video": 20,
+  "output_dir": "./outputs/prior/msrvtt_multimodal_prior_1ka",
+  "reuse_text_features": "./outputs/prior/msrvtt_bert_text_prior_1ka/features/bert_text_features.npz",
+  "pretrained_gram_dir": "./weights/models/GRAM_pretrained_5modalities",
+  "observations": {
+    "text": 20,
+    "video": 16,
+    "audio": 16,
+    "joint_per_modality": 16
+  },
+  "encoder": {
+    "device": "cuda",
+    "fp16": true,
+    "text_batch_size": 128,
+    "vision_batch_size": 8,
+    "audio_batch_size": 16,
+    "text_max_length": 64,
+    "vision_resolution": 224,
+    "audio_sample_rate": 16000,
+    "audio_segment_seconds": 2.0,
+    "audio_mel_bins": 64,
+    "audio_fbank_mean": 15.41663,
+    "audio_fbank_std": 6.55582
+  },
+  "lln": {
+    "k_min": 1,
+    "k_max": 19,
+    "bootstrap_repeats": 100,
+    "event_batch_size": 4
+  },
+  "gaussian": {
+    "standardize_pc1": true,
+    "pca_solver": "randomized",
+    "pca_iterations": 7,
+    "random_projection_count": 16
+  },
+  "support_criteria": {
+    "lln_spearman_rho_max": -0.90,
+    "lln_relative_error_reduction_min": 0.70,
+    "pc1_qq_r2_min": 0.98,
+    "pc1_abs_skew_max": 0.50,
+    "pc1_abs_excess_kurtosis_max": 1.00
+  },
+  "figures": {
+    "dpi": 300,
+    "formats": ["png", "pdf"],
+    "max_kde_points": 20000,
+    "max_qq_points": 6000
+  }
+}

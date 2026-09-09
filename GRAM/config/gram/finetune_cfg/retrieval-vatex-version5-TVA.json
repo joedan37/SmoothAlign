@@ -1,0 +1,53 @@
+{
+  "run_cfg": {
+    "default": "./config/gram/default_run_cfg.json"
+  },
+  "model_cfg": {
+    "default": "./config/gram/default_model_cfg.json",
+    "gaussian_prior_enabled": true,
+    "gaussian_prior_tau": 1.0,
+    "gaussian_prior_confidence_enabled": true,
+    "gaussian_prior_confidence_temp": 0.07,
+    "gaussian_prior_confidence_power": 0.5,
+    "gaussian_prior_confidence_floor": 0.0,
+    "same_video_multi_positive": true,
+    "itm_prior_softening_enabled": true,
+    "itm_prior_softening_min_weight": 0.05,
+    "itm_hard_negative_use_prior": false
+  },
+  "data_cfg": {
+    "train": [
+      {
+        "type": "annoindexed",
+        "training": true,
+        "name": "vatex_ret",
+        "txt": "./datasets/annotations/vatex/descs_ret_train.json",
+        "vision": "./datasets/rawdata/vatex/videos",
+        "audio": "./datasets/rawdata/vatex/audios",
+        "vision_format": "video_rawvideo",
+        "vision_sample_num": 4,
+        "audio_sample_num": 1,
+        "task": "ret%tv%ta",
+        "epoch": 2.5,
+        "n_workers": 8,
+        "batch_size": 32
+      }
+    ],
+    "val": [
+      {
+        "type": "annoindexed",
+        "training": false,
+        "name": "vatex_ret",
+        "txt": "./datasets/annotations/vatex/descs_ret_test.json",
+        "vision": "./datasets/rawdata/vatex/videos",
+        "audio": "./datasets/rawdata/vatex/audios",
+        "vision_format": "video_rawvideo",
+        "vision_sample_num": 8,
+        "audio_sample_num": 1,
+        "task": "ret%tva",
+        "n_workers": 8,
+        "batch_size": 64
+      }
+    ]
+  }
+}

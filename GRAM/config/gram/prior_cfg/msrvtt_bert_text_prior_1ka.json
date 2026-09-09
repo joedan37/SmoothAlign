@@ -1,0 +1,33 @@
+{
+  "experiment_name": "msrvtt_bert_text_prior_1ka",
+  "seed": 20260715,
+  "ret_annotation": "./datasets/annotations/msrvtt/descs_ret_test.json",
+  "caption_annotation": "./datasets/annotations/msrvtt/descs_cap_test.json",
+  "split_size": 1000,
+  "captions_per_video": 20,
+  "output_dir": "./outputs/prior/msrvtt_bert_text_prior_1ka",
+  "encoder": {
+    "type": "bert",
+    "model_path": "./weights/encoders/bert/bert-base-uncased",
+    "pooling": "mean",
+    "max_length": 64,
+    "batch_size": 128,
+    "device": "cuda",
+    "normalize_features": true,
+    "freeze": true,
+    "local_files_only": true
+  },
+  "lln": {
+    "k_min": 1,
+    "k_max": 19,
+    "bootstrap_repeats": 100
+  },
+  "gaussian": {
+    "pca_components": 2,
+    "standardize_pc1": true
+  },
+  "figures": {
+    "dpi": 300,
+    "formats": ["png", "pdf"]
+  }
+}

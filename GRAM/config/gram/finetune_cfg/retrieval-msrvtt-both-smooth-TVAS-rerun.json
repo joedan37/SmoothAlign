@@ -1,0 +1,51 @@
+{
+  "run_cfg": {
+    "default": "./config/gram/default_run_cfg.json"
+  },
+  "model_cfg": {
+    "default": "./config/gram/default_model_cfg.json",
+    "gaussian_prior_enabled": true,
+    "gaussian_prior_area_softening_enabled": true,
+    "gaussian_prior_itm_softening_enabled": true,
+    "gaussian_prior_tau": 1.0,
+    "gaussian_prior_confidence_enabled": true,
+    "gaussian_prior_confidence_temp": 0.07,
+    "gaussian_prior_confidence_power": 0.5,
+    "gaussian_prior_confidence_floor": 0.0,
+    "same_video_multi_positive": false,
+    "itm_prior_softening_enabled": true,
+    "itm_prior_softening_min_weight": 0.05,
+    "itm_hard_negative_use_prior": false
+  },
+  "data_cfg":
+  {"train":
+  [{  "type":"annoindexed",
+      "training":true,
+      "name": "msrvtt_ret",
+      "txt": "./datasets/annotations/msrvtt/descs_ret_train.json",
+      "vision": "./datasets/rawdata/msrvtt/TrainValVideo",
+      "audio": "./datasets/rawdata/msrvtt/TrainValAudio",
+      "vision_transforms":"crop_flip",
+      "vision_format": "video_rawvideo",
+      "vision_sample_num": 4,
+      "audio_sample_num": 1,
+      "task" : "ret%tv%ta%ts",
+      "epoch": 4,
+      "n_workers":8,
+      "batch_size": 32}],
+  "val":
+    [{
+        "type":"annoindexed",
+        "training":false,
+        "name": "msrvtt_ret",
+        "txt": "./datasets/annotations/msrvtt/descs_ret_test.json",
+        "vision_transforms":"crop_flip",
+        "vision_format": "video_rawvideo",
+        "vision": "./datasets/rawdata/msrvtt/TestVideo",
+        "audio": "./datasets/rawdata/msrvtt/TestAudio",
+        "vision_sample_num": 8,
+        "audio_sample_num": 1,
+        "task" : "ret%tvas",
+        "n_workers": 8,
+        "batch_size": 64
+    }]}}
