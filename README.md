@@ -88,3 +88,14 @@ The scripts accept `IEMOCAP_CACHE_DIR`, `IEMOCAP_OUTPUT_DIR`, `PYTHON_BIN`,
 `IEMOCAP_CACHE_BATCH_SIZE`, and `IEMOCAP_NUM_WORKERS` overrides. The diagnostic
 uses two video frames per utterance and the supplied audio features; see the
 script arguments for reproducibility details.
+
+## Acknowledgements
+
+We thank the authors and maintainers of GRAM for the volume-based multimodal
+retrieval framework on which the GRAM/ component is built. We also thank the
+NAVER AI authors of PCME and PCME++ for the probabilistic cross-modal embedding
+implementations that support the PCME++/ component. SmoothAlign extends and
+adapts ideas and code from these projects and from the other open-source
+components listed in THIRD_PARTY_LICENSES-GRAM.md and NOTICE-PCMEPP. Please
+retain the corresponding copyright notices and follow the original licenses
+when redistributing or modifying this repository.
