@@ -92,9 +92,9 @@ script arguments for reproducibility details.
 ## Acknowledgements
 
 We thank the authors and maintainers of GRAM for the volume-based multimodal
-retrieval framework on which the GRAM/ component is built. We also thank the
+retrieval framework on which the GRAM component is built. We also thank the
 NAVER AI authors of PCME and PCME++ for the probabilistic cross-modal embedding
-implementations that support the PCME++/ component. SmoothAlign extends and
+implementations that support the PCME++ component. SmoothAlign extends and
 adapts ideas and code from these projects and from the other open-source
 components listed in THIRD_PARTY_LICENSES-GRAM.md and NOTICE-PCMEPP. Please
 retain the corresponding copyright notices and follow the original licenses
