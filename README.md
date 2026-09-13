@@ -91,11 +91,12 @@ script arguments for reproducibility details.
 
 ## Acknowledgements
 
-We thank the authors and maintainers of GRAM for the volume-based multimodal
-retrieval framework on which the GRAM component is built. We also thank the
-NAVER AI authors of PCME and PCME++ for the probabilistic cross-modal embedding
-implementations that support the PCME++ component. SmoothAlign extends and
-adapts ideas and code from these projects and from the other open-source
-components listed in THIRD_PARTY_LICENSES-GRAM.md and NOTICE-PCMEPP. Please
-retain the corresponding copyright notices and follow the original licenses
-when redistributing or modifying this repository.
+We are very grateful for these excellent works [GRAM](GRAM/),
+[PCME/PCME++](https://github.com/naver-ai/pcme), [OpenAI CLIP](https://github.com/openai/CLIP),
+[BEATs](https://github.com/microsoft/unilm/tree/master/beats),
+[VAST](https://github.com/TXH-mercury/VAST), and
+[Swin Transformer](https://github.com/microsoft/Swin-Transformer), which have
+provided the basis for our framework. Please retain the corresponding
+copyright notices and follow the original licenses when redistributing or
+modifying this repository; detailed attribution is provided in
+THIRD_PARTY_LICENSES-GRAM.md and NOTICE-PCMEPP.
