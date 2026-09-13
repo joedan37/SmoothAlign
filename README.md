@@ -40,12 +40,12 @@ Run GRAM from its directory so that the relative configuration paths resolve:
 
 ```bash
 cd GRAM
-python -m torch.distributed.launch \\
-  --nnodes 1 --node_rank 0 --nproc_per_node 4 --master_port 9834 \\
-  run.py --learning_rate 2e-5 --checkpointing true --first_eval true \\
-  --save_best true \\
-  --config ./config/gram/finetune_cfg/pretrain-gram.json \\
-  --pretrain_dir ./outputs/gram/pretrain_gram \\
+python -m torch.distributed.launch \
+  --nnodes 1 --node_rank 0 --nproc_per_node 4 --master_port 9834 \
+  run.py --learning_rate 2e-5 --checkpointing true --first_eval true \
+  --save_best true \
+  --config ./config/gram/finetune_cfg/pretrain-gram.json \
+  --pretrain_dir ./outputs/gram/pretrain_gram \
   --output_dir ./outputs/gram/pretrain_gram/downstream/pretrain
 ```
 
